@@ -1,0 +1,23 @@
+#IFNDEF KONTROLER_H
+#DEFINE KONTROLER_H
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#ENDIF
