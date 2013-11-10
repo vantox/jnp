@@ -13,7 +13,7 @@ sejf.o: sejf.cc
 	$(CXX) $(CXXFLAGS) sejf.cc -c -o sejf.o
 	
 test.o: test.cc 
-	$(CC) $(CXXFLAGS) test.cc -c -o test.o
+	$(CXX) $(CXXFLAGS) test.cc -c -o test.o
 	
 clean:
 	rm -f *.o
