@@ -1,5 +1,6 @@
-#IFNDEF KONTROLER_H
-#DEFINE KONTROLER_H
+#ifndef KONTROLER_H
+#define KONTROLER_H
+ extern int k;
 
 
 
@@ -19,5 +20,4 @@
 
 
 
-
-#ENDIF
+#endif
