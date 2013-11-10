@@ -9,6 +9,8 @@ class Sejf{
 		string value;
 		size_t accesses;
 		Kontroler controler;
+		Sejf(const Sejf& sejf);
+		Sejf operator=(Sejf sejf);
 	public:
 		Sejf(string value, ssize_t accesses);
 		Sejf(string value);

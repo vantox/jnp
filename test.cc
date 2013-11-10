@@ -6,8 +6,8 @@ using namespace std;
 
 int main()
 {
-	Sejf s1("ala108", 0);
-	Sejf s= s1;
+	Sejf s("ala108", 0);
+	//Sejf s2 (s);
 	
 	
 	//cout <<s[2] << endl;
