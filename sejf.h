@@ -18,7 +18,7 @@ class Sejf{
 		Sejf& operator-=(ssize_t val);
 		Sejf& operator*=(ssize_t val);
 		int16_t operator [](size_t pos);
-		Kontroler& kontroler();
+		Kontroler* kontroler();
 		
 		
 };

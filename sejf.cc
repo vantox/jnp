@@ -57,25 +57,22 @@ using namespace std;
 		return *this;
 	}
 	
-	Kontroler& Sejf::kontroler()
+	Kontroler* Sejf::kontroler()
 	{
-		return this->controler;
+		return &controler;
 	}
 	
 	
 	int16_t Sejf::operator [](size_t pos)
 	{
 		if(pos > this->value.size() -1){
-			cout << "poza zakresem\n";
 			return -1;
 		}
 		else if(this->accesses > 0){
-			cout << "juz podaje\n";
 			this->accesses--;
 			return this->value[pos];
 		}
 		else{
-			cout << "brak dostepu\n";
 			this->controler.change_state(2);
 			return -1;
 		}

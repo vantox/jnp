@@ -14,7 +14,7 @@ enum state
 };
 
 class Kontroler{
-	friend ostream& operator<<(ostream& output, Kontroler& k);
+	friend ostream& operator<<(ostream& output, Kontroler* k);
 	friend class Sejf;
 	private:
 		int state;
