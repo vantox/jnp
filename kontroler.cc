@@ -24,3 +24,5 @@ Kontroler::operator bool() const
 
 
 
+
+

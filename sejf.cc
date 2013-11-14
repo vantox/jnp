@@ -1,5 +1,4 @@
 #include<iostream>
-#include<cstdint>
 #include<utility>
 #include "sejf.h"
 
@@ -92,7 +91,7 @@ using namespace std;
 		}
 	}
 	
-	void swap(Sejf& s1, Sejf& s2)
+	void swap_sejf(Sejf& s1, Sejf& s2)
 	{
 		size_t tmp_accesses = s1.accesses;
 		s1.accesses = s2.accesses;
@@ -105,4 +104,19 @@ using namespace std;
 		s2.curr_state = tmp_state;
 	}
 	
+	
+	Sejf::Sejf(const Sejf& sejf)
+	{
+		this->value = sejf.value;
+		this->accesses = sejf.accesses;
+		this->curr_state = sejf.curr_state;		
+	}
+	
+	void Sejf::operator=(Sejf sejf)
+	{
+		this->value = sejf.value;
+		this->accesses = sejf.accesses;
+		this->curr_state = sejf.curr_state;		
+	}
 
+	namespace std { template<> void swap(Sejf &s1, Sejf &s2) { swap_sejf(s1, s2); } }

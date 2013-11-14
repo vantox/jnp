@@ -15,6 +15,7 @@ sejf.o: sejf.cc
 test.o: test.cc 
 	$(CXX) $(CXXFLAGS) test.cc -c -o test.o
 	
+	
 clean:
 	rm -f *.o
 

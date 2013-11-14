@@ -30,8 +30,12 @@ b += 1;
 auto k = b.kontroler();
 a[0]; a[0];
 cout << k;
-swap(a, b);
+std::swap(a, b);
 cout << k;
-	
+
+//Sejf c(a);   nie dzia³a, i dobrze
+if(!k) cout << "dziala\n";
+//if(a.kontroler() > b.kontroler()) cout << "cos\n"; tez nie dziala i dobrze
+
 	return 0;
 }
