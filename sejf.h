@@ -11,6 +11,7 @@ class Kontroler;
 
 class Sejf{
 	friend class Kontroler;
+	friend void swap(Sejf& s1, Sejf& s2);
 	private:
 		enum state{
 			OK,

@@ -1,5 +1,6 @@
 #include<iostream>
 #include<cstdint>
+#include<utility>
 #include "sejf.h"
 
 using namespace std;
@@ -89,6 +90,19 @@ using namespace std;
 			default:
 				return "";
 		}
+	}
+	
+	void swap(Sejf& s1, Sejf& s2)
+	{
+		size_t tmp_accesses = s1.accesses;
+		s1.accesses = s2.accesses;
+		s2.accesses = tmp_accesses;
+		string tmp_value = s1.value;
+		s1.value = s2.value;
+		s2.value = tmp_value;
+		Sejf::state tmp_state = s1.curr_state;
+		s1.curr_state = s2.curr_state;
+		s2.curr_state = tmp_state;
 	}
 	
 
