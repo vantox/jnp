@@ -2,28 +2,22 @@
 #define KONTROLER_H
 #include<string>
 
+#include "sejf.h"
+
 using namespace std;
 
-enum state
-{
-    OK,
-	ZMANIPULOWANY,
-    WLAMANIE
-	
-	
-};
+class Sejf;
 
 class Kontroler{
-	friend ostream& operator<<(ostream& output, Kontroler* k);
+	friend ostream& operator<<(ostream& output, Kontroler k);
 	friend class Sejf;
 	private:
-		int state;
-		Kontroler();
-		void change_state(int state);
+		Kontroler(Sejf* sejf);
+		Sejf* sejf;
 		bool operator<(Kontroler k);
+		string get_state();
 	public:
-		ostream& operator<<(ostream& out);
-		int get();
+		explicit operator bool() const;
 
 		
 };

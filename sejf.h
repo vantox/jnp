@@ -2,25 +2,36 @@
 #define SEJF_H
 #include<string>
 #include<cstdint>
+//class Sejf;
 #include "kontroler.h"
+
 using namespace std;
+
+class Kontroler;
+
 class Sejf{
+	friend class Kontroler;
 	private:
+		enum state{
+			OK,
+			ZMANIPULOWANY,
+			WLAMANIE
+		};
+		state curr_state;
+		string get_state();
 		string value;
 		size_t accesses;
-		Kontroler controler;
 		Sejf(const Sejf& sejf);
 		Sejf operator=(Sejf sejf);
+		void change_state(state s);
 	public:
 		Sejf(string value, ssize_t accesses);
 		Sejf(string value);
-		string get_val();
-		size_t get_accesses();
 		Sejf& operator+=(ssize_t val);
 		Sejf& operator-=(ssize_t val);
 		Sejf& operator*=(ssize_t val);
 		int16_t operator [](size_t pos);
-		Kontroler* kontroler();
+		Kontroler kontroler();
 		
 		
 };

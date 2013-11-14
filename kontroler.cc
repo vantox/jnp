@@ -1,33 +1,26 @@
 #include<iostream>
 #include "kontroler.h"
-void Kontroler::change_state(int state)
+
+Kontroler::Kontroler(Sejf* sejf)
 {
-	if(this->state < state)
-		this->state = state;
+	this->sejf = sejf;
 }
 
-Kontroler::Kontroler()
+ostream& operator<<(ostream& output, Kontroler k)
 {
-	this->state = 0;
-}
-
-ostream& operator<<(ostream& output, Kontroler* k)
-{
-	switch(k->state){
-		case 0:
-			output << "OK\n";
-			break;
-		case 1:
-			output << "ALARM: ZMANIPULOWANY\n";
-			break;
-		case 2:
-			output << "ALARM: WLAMANIE\n";
-			break;
-	}
+	output << k.get_state();
 	return output;
 }
 
-int Kontroler::get(){
-		return this->state;
+string Kontroler::get_state()
+{
+	return this->sejf->get_state();
 }
+
+Kontroler::operator bool() const
+{
+	return (this->sejf->accesses > 0);
+}
+
+
 
