@@ -7,6 +7,9 @@
 
 - kontroler bool done
 
-- brak mo¿liwo¶æi utworzenia sejfu z ujemn± warto¶ci± dostêpów
+- brak mo¿liwo¶æi utworzenia sejfu z ujemn± warto¶ci± dostêpów done
 
-- ustalenie limitu dostêpów
+- ustalenie limitu dostêpów (nie ma limitów ale jest to rozwi±zane tak aby by³o zgodnie z tre¶ci± zadania) done
+
+- move  done
+
