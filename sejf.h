@@ -3,43 +3,42 @@
 #include<string>
 #include<cstdint>
 #include<utility>
-
-class Sejf;
+#include <stdexcept>
 #include "kontroler.h"
 
 using namespace std;
 
-
-
-
-namespace std { template<> void swap(Sejf &s1, Sejf &s2); } 
+class Kontroler;
 
 class Sejf{
 	friend class Kontroler;
-	friend void swap_sejf(Sejf& s1, Sejf& s2);
-	private:
+	
+	public:
 		enum state{
 			OK,
 			ZMANIPULOWANY,
 			WLAMANIE
 		};
+	
+	private:
 		state curr_state;
-		string get_state();
+		state get_state();
 		string value;
-		size_t accesses;
-		Sejf(const Sejf& sejf);
-		void operator=(Sejf sejf);
+		long long accesses;
 		void change_state(state s);
+		
 	public:
-		Sejf(string value, ssize_t accesses);
-		Sejf(string value);
-		Sejf& operator+=(ssize_t val);
-		Sejf& operator-=(ssize_t val);
-		Sejf& operator*=(ssize_t val);
+		Sejf(const Sejf& sejf) = delete;
+		Sejf& operator=(const Sejf& sejf) = delete;
+		Sejf(Sejf&& sejf);
+        Sejf& operator=(Sejf&& sejf);
+		Sejf(string value, long long accesses = 42);
+		Sejf& operator+=(long long val);
+		Sejf& operator-=(long long val);
+		Sejf& operator*=(long long val);
 		int16_t operator [](size_t pos);
 		Kontroler kontroler();
-		
-		
+		friend ostream& operator<<(ostream& output, const Kontroler& k);
 };
 
 

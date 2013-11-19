@@ -17,7 +17,7 @@ test.o: test.cc
 	
 	
 clean:
-	rm -f *.o
+	rm -f *.o test
 
 .PHONY: all clean
 	

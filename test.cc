@@ -3,6 +3,8 @@
 #include<iostream>
 #include <assert.h>
 #include <sstream>
+#include<utility>
+#include <algorithm>
 
 using namespace std;
 
@@ -32,10 +34,20 @@ a[0]; a[0];
 cout << k;
 std::swap(a, b);
 cout << k;
+//Sejf x("asd", -5);
 
-//Sejf c(a);   nie dzia³a, i dobrze
+//Sejf c(a); //  nie dzia³a, i dobrze
 if(!k) cout << "dziala\n";
-//if(a.kontroler() > b.kontroler()) cout << "cos\n"; tez nie dziala i dobrze
+
+Sejf x("");
+x = move(x);
+cout << x[0] << endl;
+Sejf x2("a");
+x2 = move(x2);
+cout << x2[0] << endl;
+//if(a.kontroler() > b.kontroler()) cout << "cos\n"; //tez nie dziala i dobrze
+//Sejf g("a", -5);// po odpaleniu leci sigsegv, wola³bym ¿eby siê nie kompilowa³o wogóle
+
 
 	return 0;
 }
