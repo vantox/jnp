@@ -44,7 +44,8 @@ x = move(x);
 cout << x[0] << endl;
 Sejf x2("a");
 x2 = move(x2);
-cout << x2[0] << endl;
+x2 -= 42;
+cout << x2[0] << " " << x2.kontroler() << endl;
 //if(a.kontroler() > b.kontroler()) cout << "cos\n"; //tez nie dziala i dobrze
 //Sejf g("a", -5);// po odpaleniu leci sigsegv, wola³bym ¿eby siê nie kompilowa³o wogóle
 

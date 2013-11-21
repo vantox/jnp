@@ -40,7 +40,7 @@ Sejf& Sejf::operator+=(long long val)
 Sejf& Sejf::operator-=(long long val)
 {
 	long long check = this->accesses - val;
-	if(check > this->accesses)
+	if((check > this->accesses) || (check < 0))
 		return *this;
 	change_state(ZMANIPULOWANY);
 	this->accesses = check;
